@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="вадян">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<title>вадян</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div>
+    <div class="eyebrow">МУЗЫКА</div>
+    <h1>вадян</h1>
+  </div>
+  <label class="add">
+    <input id="fileInput" type="file" accept="audio/mpeg,.mp3" multiple hidden>
+    <span>＋</span>
+  </label>
+</header>
+
+<main>
+  <div id="empty" class="empty">
+    <div class="empty-icon">♫</div>
+    <h2>Твоя музыка</h2>
+    <p>Добавь MP3 — треки останутся на этом iPhone и будут доступны офлайн.</p>
+    <label class="primary">
+      Добавить MP3
+      <input type="file" accept="audio/mpeg,.mp3" multiple hidden>
+    </label>
+  </div>
+
+  <section id="library" hidden>
+    <div class="section-title">Альбомы</div>
+    <div id="albums" class="albums"></div>
+    <div class="section-title tracks-title">Треки</div>
+    <input id="search" class="search" placeholder="Поиск">
+    <div id="tracks"></div>
+  </section>
+</main>
+
+<div id="mini" class="mini" hidden></div>
+
+<div id="player" class="player" hidden>
+  <button class="close" id="closePlayer">⌄</button>
+  <div id="bigCover" class="big-cover"></div>
+  <div id="nowTitle"></div>
+  <div id="nowArtist"></div>
+  <input id="seek" type="range" min="0" max="100" value="0">
+  <div class="times"><span id="cur">0:00</span><span id="dur">0:00</span></div>
+  <div class="controls">
+    <button id="back">↶15</button>
+    <button id="play" class="play">▶</button>
+    <button id="forward">30↷</button>
+  </div>
+</div>
+
+<audio id="audio" preload="metadata"></audio>
+<script src="app.js"></script>
+</body>
+</html>
